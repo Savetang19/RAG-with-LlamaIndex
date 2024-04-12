@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
 
     const chatEngine = await createChatEngine(llm);
 
+    // @ts-ignore
     const response = await chatEngine.chat(lastMessage.content, messages, true);
 
     // Transform the response into a readable stream
